@@ -1,0 +1,32 @@
+extends _base/_base.pug
+
+block body
+    .is-fullheight.hero.is-success
+        .hero-body#gradient
+            .container
+                .column.is-6.is-offset-3.has-text-centered.is-mobile
+
+                    .box#login-box
+                        h1.has-text-black#title Home Security
+                        p.is-size-6.subtitle.has-text-black.mb-6 Login
+
+                        form(action="/login" method="POST").mt-6
+                            //- Username
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded(type="text", placeholder="Username",name="username")
+                                    span.icon.is-small.is-left
+                                        i.fas.fa-user
+                            //- Password
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded.is-fullwidth(type="password", placeholder="Password", name="password")
+                                    span.icon.is-small.is-left
+                                        i.fas.fa-lock
+                            //- Login Button
+                            .field.mt-6
+                                .control
+                                    input.button.is-link.is-fullwidth(type='submit',value='LOGIN')
+
+                            //- Register
+                            a(href='/register').has-text-black.is-link.is-size-6.mt-1.py-6.has-text-grey Register

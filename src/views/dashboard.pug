@@ -1,0 +1,52 @@
+extends _base/_base.pug
+
+block body
+
+
+    .is-fixed-top.hero.is-primary#gradient
+        .hero-body
+            .container
+                - let usr = user
+                .title.is-size-5#dashboard_username
+                    p= usr.username
+                .subtitle.is-size-6#dashboard_email
+                    p= usr.email
+
+
+    .is-fixed-bottom#navbar-bottom
+        .columns.is-centered.is-mobile
+            .column.has-text-centered.is-narrow
+                a(href='/dashboard')
+                    span.icon.is-large.btm-bar-btn
+                        i.fas.fa-home
+                    h1.is-uppercase.has-text-weight-semibold.is-size-7 dashboard
+            .column.has-text-centered.is-narrow
+                a(href='/dashboard')
+                    span.icon.is-large.btm-bar-btn
+                        i.fas.fa-exclamation-triangle
+                    h1.is-uppercase.has-text-weight-semibold.is-size-7 Notification
+            .column.has-text-centered.is-narrow
+                a(href='/dashboard')
+                    span.icon.is-large.btm-bar-btn
+                        i.fas.fa-cog
+                    h1.is-uppercase.has-text-weight-semibold.is-size-7 Settings
+
+    .floating-button
+        button.button.is-primary#add_device
+            h1 Add Device
+
+    
+    section.section
+        h1.title.is-3.has-text-dark-grey Your Devices
+        .container.is-fluid
+            .columns.is-mobile.is-multiline
+                .column.is-full-mobile.is-6-tablet.is-3-desktop
+                    a(href='/device_info')
+                        .card
+                            .card-image
+                                figure.image
+                                    img(src="https://bulma.io/images/placeholders/1280x960.png" alt='placeholder')
+                            .card-content
+                                h1.title.is-5 Camera 1
+                                p.subtitle.is-6 CAM-1
+                                p.subtitle.is-6.online ONLINE

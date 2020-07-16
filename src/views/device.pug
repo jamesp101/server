@@ -1,0 +1,76 @@
+
+extends _base/_base.pug
+
+block body
+    .is-fixed-top.hero.is-primary#gradient
+        .hero-body
+            .columns.multiline.is-mobile
+                .column.is-1
+                    a(href='/dashboard').is-left.has-text-white
+                        span.icon.is-medium.is-small
+                            i.fas.fa-arrow-left
+                .column
+                    h1.title Camera 1
+    section.section
+        .columns.is-mobile
+            .column
+            iframe(src="http://raspberrypi:5000" title="Stream").stream
+            //- img(src="http://raspberrypi:5000")
+
+    section.section
+        .tabs.is-fullwidth.is-toggle.is-medium
+            ul
+                li.is-active#li-notif
+                    a(href="#notification-tab" onclick="notification_tab()")
+                        span.icon
+                            i.fas.fa-angle-left(aria-hidden='true')
+                        span Notifications
+                li#li-sett
+                    a(href="#settings-tab" onclick="settings_tab()")
+                        span.icon
+                            i.fas.fa-angle-left(aria-hidden='true')
+                        span Settings
+
+        #notification-tab
+            .columns
+                .column.is-12-mobile.is-6-tablet.is-4-desktop
+                    a(onclick='notifshow("https://bulma.io/images/placeholders/600x480.png")')
+                        .card
+                            .card-image
+                                figure.image.is-16by9
+                                    img(src="#").notif-img
+                            .card-content
+                                .content
+                                    h5 HelloW World
+                                    p HelloW World
+
+
+        #settings-tab
+            .columns
+                .column.is-12
+                    .card
+                        a#device_rename
+                            .card-content
+                                h1.title.is-size-5 Train Face
+                                p.subtitle.is-size-6 Trains a new face
+            .columns
+                .column.is-12
+                    .card
+                        a#remove_faces
+                            .card-content
+                                h1.title.is-size-5 Delete trained faces
+                                p.subtitle.is-size-6 Delete trained faces
+            .columns
+                .column.is-12
+                    .card
+                        a#device_rename
+                            .card-content
+                                h1.title.is-size-5 Rename
+                                p.subtitle.is-size-6 Rename the device
+            .columns
+                .column.is-12
+                    .card
+                        a#device_off
+                            .card-content
+                                h1.title.is-size-5 Turn off
+                                p.subtitle.is-size-6 Turns off the stream

@@ -1,0 +1,14 @@
+
+extends _base/_base.pug
+
+block body
+    .is-fullheight.hero.is-success(onload='register_redirect()')
+        .hero-body#gradient
+            .container
+                .column.is-4.is-offset-4.is-mobile
+
+                    .box#login-box
+
+                        h1.has-text-bold Successfully Registered
+                        a.button.mt-6.is-success(href="/")
+                            h1.has-text-centered.is-large Go to Login

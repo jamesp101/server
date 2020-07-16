@@ -1,0 +1,45 @@
+extends _base/_base.pug
+
+block body
+    .is-fullheight.hero.is-success
+        .hero-body#gradient
+            .container
+                .column.is-4.is-offset-4.is-mobile
+
+                    .box#login-box
+
+                        a(href='/').is-left
+                            span.icon.is-medium.is-large
+                                i.fas.fa-arrow-left
+
+                        h1.has-text-black.is-size-5.is-uppercase.has-text-weight-semibold.has-text-centered Register
+
+                        form(method='POST' action='/register')
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded#firstname(type="text", placeholder="Firstname",name="firstname")
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded#lastname(type="text", placeholder="Lastname", name="lastname")
+
+                            .field.mt-6
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded#email(type="email", placeholder="Email", name="email")
+                                    span.icon.is-small.is-left
+                                        i.fas.fa-envelope
+
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded#username(type="text", placeholder="Username", name="username")
+                                    span.icon.is-small.is-left
+                                        i.fas.fa-user
+
+                            .field
+                                .control.has-icons-left
+                                    input.input.is-primary.is-rounded#password(type="password", placeholder="Password", name="password")
+                                    span.icon.is-small.is-left
+                                        i.fas.fa-lock
+
+                            .field.mt-6
+                                .control
+                                    input.button.is-link.is-fullwidth#register-submit(type='submit',value='Register')
